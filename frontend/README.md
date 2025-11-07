@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# T-Shirt Store Frontend
 
-## Getting Started
+Frontend de la aplicación T-Shirt Store construido con Next.js y TypeScript.
 
-First, run the development server:
+## 🚀 Instalación
 
+1. Instalar dependencias:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Configurar la URL del backend (opcional):
+Crear un archivo `.env.local`:
+```
+NEXT_PUBLIC_API_URL=https://tallerpatronesfinal-backend-production.up.railway.app/api
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Nota**: Por defecto, el frontend está configurado para usar el backend en Railway. Si quieres usar localhost, crea el archivo `.env.local` con la URL local.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Ejecutar en modo desarrollo:
+```bash
+npm run dev
+```
 
-## Learn More
+La aplicación estará disponible en `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Estructura del Proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+frontend/
+├── src/
+│   ├── app/              # Páginas y rutas de Next.js
+│   │   ├── page.tsx      # Página principal (listado de camisetas)
+│   │   ├── create/       # Crear nueva camiseta
+│   │   ├── orders/       # Gestión de órdenes
+│   │   └── tshirt/       # Detalles de camiseta
+│   ├── services/         # Servicios API
+│   │   └── api.ts        # Cliente API para backend
+│   └── types/            # Tipos TypeScript
+│       └── index.ts      # Definiciones de tipos
+├── public/               # Archivos estáticos
+└── package.json          # Dependencias
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔌 Conexión con el Backend
 
-## Deploy on Vercel
+El frontend se conecta al backend Spring Boot en `http://localhost:8080` por defecto.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Endpoints utilizados:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **T-Shirts**: `/api/tshirts`
+- **Orders**: `/api/orders`
+- **Payments**: `/api/payments`
+
+## 🛠️ Tecnologías
+
+- **Next.js 14**: Framework React
+- **TypeScript**: Tipado estático
+- **Axios**: Cliente HTTP
+- **CSS Modules**: Estilos
+
+## 📝 Scripts Disponibles
+
+- `npm run dev`: Inicia el servidor de desarrollo
+- `npm run build`: Construye la aplicación para producción
+- `npm run start`: Inicia el servidor de producción
+- `npm run lint`: Ejecuta el linter
+
+## 🎨 Características
+
+- ✅ Listado de camisetas con filtros
+- ✅ Crear nuevas camisetas personalizadas
+- ✅ Gestión de órdenes
+- ✅ Procesamiento de pagos
+- ✅ Diseño responsive y moderno
